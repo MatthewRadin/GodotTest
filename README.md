@@ -5,5 +5,7 @@ This project's purpose was to research how the Godot engine worked, in order to 
 
 # Controls
 Move: WASD
+
 Interact: E
+
 Button Press: Mouse click
