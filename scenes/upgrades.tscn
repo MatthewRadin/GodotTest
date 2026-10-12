@@ -1,0 +1,150 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://theme/pawn_theme.tres" id="1"]
+[ext_resource type="Script" path="res://scripts/upgrades.gd" id="2"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.13, 0.094, 1.0)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Column" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Top" type="HBoxContainer" parent="Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TitleLabel" type="Label" parent="Margin/Column/Top"]
+layout_mode = 2
+text = "Upgrades"
+theme_type_variation = &"TitleLabel"
+size_flags_horizontal = 3
+unique_name_in_owner = true
+
+[node name="Categories" type="HBoxContainer" parent="Margin/Column/Top"]
+layout_mode = 2
+theme_override_constants/separation = 8
+unique_name_in_owner = true
+
+[node name="FloorPlansButton" type="Button" parent="Margin/Column/Top/Categories"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 40)
+text = "Floor Plans"
+
+[node name="ItemDisplayButton" type="Button" parent="Margin/Column/Top/Categories"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 40)
+text = "Item Display"
+
+[node name="ShopDecorButton" type="Button" parent="Margin/Column/Top/Categories"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 40)
+text = "Shop Decor"
+
+[node name="ToolsAndAutomationButton" type="Button" parent="Margin/Column/Top/Categories"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 40)
+text = "Tools & Automation"
+
+[node name="Row" type="HBoxContainer" parent="Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 16
+size_flags_vertical = 3
+
+[node name="ForSaleCard" type="PanelContainer" parent="Margin/Column/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Box" type="VBoxContainer" parent="Margin/Column/Row/ForSaleCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ListTitle" type="Label" parent="Margin/Column/Row/ForSaleCard/Box"]
+layout_mode = 2
+text = "For sale"
+theme_override_font_sizes/font_size = 24
+unique_name_in_owner = true
+
+[node name="Items" type="VBoxContainer" parent="Margin/Column/Row/ForSaleCard/Box"]
+layout_mode = 2
+theme_override_constants/separation = 10
+unique_name_in_owner = true
+
+[node name="TreeCard" type="PanelContainer" parent="Margin/Column/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Box" type="VBoxContainer" parent="Margin/Column/Row/TreeCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TreeHeading" type="Label" parent="Margin/Column/Row/TreeCard/Box"]
+layout_mode = 2
+text = "Upgrade Tree"
+theme_override_font_sizes/font_size = 24
+
+[node name="Tree" type="VBoxContainer" parent="Margin/Column/Row/TreeCard/Box"]
+layout_mode = 2
+theme_override_constants/separation = 6
+unique_name_in_owner = true
+
+[node name="BottomCard" type="PanelContainer" parent="Margin/Column"]
+layout_mode = 2
+
+[node name="Box" type="VBoxContainer" parent="Margin/Column/BottomCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BuffsLabel" type="Label" parent="Margin/Column/BottomCard/Box"]
+layout_mode = 2
+text = "Current buffs: none yet"
+theme_type_variation = &"MutedLabel"
+unique_name_in_owner = true
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/Column/BottomCard/Box"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BuyButton" type="Button" parent="Margin/Column/BottomCard/Box/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 48)
+text = "Buy Selected"
+unique_name_in_owner = true
+
+[node name="NextDayButton" type="Button" parent="Margin/Column/BottomCard/Box/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 48)
+text = "Start Next Day"
+
+[connection signal="pressed" from="Margin/Column/BottomCard/Box/Buttons/BuyButton" to="." method="_on_buy_button_pressed"]
+[connection signal="pressed" from="Margin/Column/BottomCard/Box/Buttons/NextDayButton" to="." method="_on_next_day_button_pressed"]

@@ -1,0 +1,335 @@
+[gd_scene format=3 uid="uid://cd5v128frmf4k"]
+
+[ext_resource type="Theme" uid="uid://gjvhybwnb5ak" path="res://theme/pawn_theme.tres" id="1"]
+[ext_resource type="Script" uid="uid://cfei1b4pyd7b6" path="res://scripts/shop.gd" id="2"]
+[ext_resource type="Script" uid="uid://we6br7yn82g7" path="res://scripts/hotspot.gd" id="3"]
+
+[node name="Root" type="Control" unique_id=1453071562]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="World" type="Control" parent="." unique_id=426455474]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Wall" type="ColorRect" parent="World" unique_id=874970748]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 110.0
+mouse_filter = 2
+color = Color(0.24, 0.17, 0.125, 1)
+
+[node name="Floor" type="ColorRect" parent="World" unique_id=1705653459]
+layout_mode = 0
+offset_top = 110.0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.36, 0.27, 0.2, 1)
+
+[node name="Plank0" type="ColorRect" parent="World" unique_id=1146629660]
+layout_mode = 0
+offset_top = 110.0
+offset_right = 3.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank1" type="ColorRect" parent="World" unique_id=345846685]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 110.0
+offset_right = 163.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank2" type="ColorRect" parent="World" unique_id=1403332520]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 110.0
+offset_right = 323.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank3" type="ColorRect" parent="World" unique_id=1507381707]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 110.0
+offset_right = 483.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank4" type="ColorRect" parent="World" unique_id=1712221016]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 110.0
+offset_right = 643.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank5" type="ColorRect" parent="World" unique_id=2135343288]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 110.0
+offset_right = 803.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank6" type="ColorRect" parent="World" unique_id=2033630062]
+layout_mode = 0
+offset_left = 960.0
+offset_top = 110.0
+offset_right = 963.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Plank7" type="ColorRect" parent="World" unique_id=1354539805]
+layout_mode = 0
+offset_left = 1120.0
+offset_top = 110.0
+offset_right = 1123.0
+offset_bottom = 720.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+
+[node name="Spots" type="Control" parent="World" unique_id=1234029659]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="DisplayCase1" type="ColorRect" parent="World/Spots" unique_id=1834758107]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 150.0
+offset_right = 250.0
+offset_bottom = 220.0
+mouse_filter = 2
+color = Color(0.42, 0.32, 0.25, 1)
+script = ExtResource("3")
+label_text = "Display Case"
+toast_text = "Placeholder: put an owned item in a display case."
+
+[node name="Tag" type="Label" parent="World/Spots/DisplayCase1" unique_id=521244101]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Display Case"
+
+[node name="DisplayCase2" type="ColorRect" parent="World/Spots" unique_id=1408553205]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 150.0
+offset_right = 470.0
+offset_bottom = 220.0
+mouse_filter = 2
+color = Color(0.42, 0.32, 0.25, 1)
+script = ExtResource("3")
+label_text = "Display Case"
+toast_text = "Placeholder: put an owned item in a display case."
+
+[node name="Tag" type="Label" parent="World/Spots/DisplayCase2" unique_id=1561924724]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Display Case"
+
+[node name="BackRoom" type="ColorRect" parent="World/Spots" unique_id=1235247925]
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 130.0
+offset_right = 1240.0
+offset_bottom = 280.0
+mouse_filter = 2
+color = Color(0.29, 0.215, 0.157, 1)
+script = ExtResource("3")
+label_text = "Back Room"
+action = "inventory"
+
+[node name="Tag" type="Label" parent="World/Spots/BackRoom" unique_id=1448174424]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Back Room"
+
+[node name="RepairBench" type="ColorRect" parent="World/Spots" unique_id=867941276]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 540.0
+offset_right = 270.0
+offset_bottom = 620.0
+mouse_filter = 2
+color = Color(0.65, 0.486, 0.32, 1)
+script = ExtResource("3")
+label_text = "Repair Bench"
+action = "repair"
+
+[node name="Tag" type="Label" parent="World/Spots/RepairBench" unique_id=638443206]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Repair Bench"
+
+[node name="Desk" type="ColorRect" parent="World/Spots" unique_id=169639163]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 330.0
+offset_right = 1130.0
+offset_bottom = 400.0
+mouse_filter = 2
+color = Color(0.65, 0.486, 0.32, 1)
+script = ExtResource("3")
+label_text = "Desk"
+action = "talk"
+
+[node name="Tag" type="Label" parent="World/Spots/Desk" unique_id=745118333]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Desk"
+
+[node name="Dirt" type="ColorRect" parent="World/Spots" unique_id=440148786]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 440.0
+offset_right = 620.0
+offset_bottom = 500.0
+mouse_filter = 2
+color = Color(0.3, 0.23, 0.16, 1)
+script = ExtResource("3")
+label_text = "Dirt - clean it up"
+action = "cleaning"
+is_dirt = true
+
+[node name="Tag" type="Label" parent="World/Spots/Dirt" unique_id=1777989966]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Dirt - clean it up"
+
+[node name="Customer" type="ColorRect" parent="World" unique_id=1922704715]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 990.0
+offset_top = 420.0
+offset_right = 1018.0
+offset_bottom = 460.0
+mouse_filter = 2
+color = Color(0.6, 0.576, 0.47, 1)
+
+[node name="Tag" type="Label" parent="World/Customer" unique_id=1662813551]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 4.0
+offset_right = 200.0
+offset_bottom = 30.0
+theme_override_font_sizes/font_size = 14
+text = "Customer"
+
+[node name="Player" type="ColorRect" parent="World" unique_id=178812303]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 600.0
+offset_top = 300.0
+offset_right = 628.0
+offset_bottom = 340.0
+mouse_filter = 2
+color = Color(0.75, 0.58, 0.4, 1)
+
+[node name="Prompt" type="Label" parent="World" unique_id=386676304]
+unique_name_in_owner = true
+layout_mode = 0
+offset_top = 670.0
+offset_right = 1280.0
+offset_bottom = 700.0
+theme_override_font_sizes/font_size = 22
+horizontal_alignment = 1
+
+[node name="HudMargin" type="MarginContainer" parent="." unique_id=1428503810]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="HudBar" type="HBoxContainer" parent="HudMargin" unique_id=190076570]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="HudLabel" type="Label" parent="HudMargin/HudBar" unique_id=734032894]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Day 1"
+
+[node name="InventoryButton" type="Button" parent="HudMargin/HudBar" unique_id=686031748]
+custom_minimum_size = Vector2(170, 40)
+layout_mode = 2
+text = "Inventory (I)"
+
+[node name="EndDayButton" type="Button" parent="HudMargin/HudBar" unique_id=1544372011]
+custom_minimum_size = Vector2(120, 40)
+layout_mode = 2
+text = "End Day"
+
+[node name="PauseButton" type="Button" parent="HudMargin/HudBar" unique_id=1928684385]
+custom_minimum_size = Vector2(150, 40)
+layout_mode = 2
+text = "Pause (Esc)"
+
+[node name="CustomerTimer" type="Timer" parent="." unique_id=1526878335]
+unique_name_in_owner = true
+wait_time = 3.0
+one_shot = true
+
+[connection signal="pressed" from="HudMargin/HudBar/InventoryButton" to="." method="_on_inventory_button_pressed"]
+[connection signal="pressed" from="HudMargin/HudBar/EndDayButton" to="." method="_on_end_day_button_pressed"]
+[connection signal="pressed" from="HudMargin/HudBar/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="timeout" from="CustomerTimer" to="." method="_on_customer_timer_timeout"]

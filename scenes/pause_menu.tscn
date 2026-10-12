@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://theme/pawn_theme.tres" id="1"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+process_mode = 3
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Dim" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.13, 0.094, 0.9)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 12
+custom_minimum_size = Vector2(300, 0)
+
+[node name="Title" type="Label" parent="Center/Column"]
+layout_mode = 2
+text = "PAUSED"
+theme_type_variation = &"BigTitle"
+theme_override_font_sizes/font_size = 48
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="Center/Column"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 48)
+text = "Resume"
+
+[node name="SaveButton" type="Button" parent="Center/Column"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 48)
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="Center/Column"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 48)
+text = "Load"
+
+[node name="SettingsButton" type="Button" parent="Center/Column"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 48)
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Center/Column"]
+layout_mode = 2
+custom_minimum_size = Vector2(0, 48)
+text = "Quit to Main Menu"
+
+[node name="StatusLabel" type="Label" parent="Center/Column"]
+layout_mode = 2
+text = ""
+theme_type_variation = &"MutedLabel"
+horizontal_alignment = 1
+unique_name_in_owner = true
+
+[connection signal="pressed" from="Center/Column/ResumeButton" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Center/Column/SaveButton" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="Center/Column/LoadButton" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Center/Column/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Center/Column/QuitButton" to="." method="_on_quit_pressed"]

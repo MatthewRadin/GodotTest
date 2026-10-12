@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://bteyso613qwjf"]
+
+[ext_resource type="Theme" path="res://theme/pawn_theme.tres" id="1"]
+[ext_resource type="Script" uid="uid://i6hsp8fdx73s" path="res://scripts/main_menu.gd" id="2"]
+
+[node name="Root" type="Control" unique_id=158028095]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1722619951]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.13, 0.094, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=116821180]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="Center" unique_id=1513740718]
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="Center/Column" unique_id=1819404992]
+layout_mode = 2
+theme_type_variation = &"BigTitle"
+text = "PAWN SHOP"
+horizontal_alignment = 1
+
+[node name="Tagline" type="Label" parent="Center/Column" unique_id=1619270662]
+layout_mode = 2
+theme_type_variation = &"MutedLabel"
+text = "Research Milestone Project"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="Center/Column" unique_id=1680969808]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+
+[node name="NewRunButton" type="Button" parent="Center/Column" unique_id=1128111516]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "New Run"
+
+[node name="ContinueButton" type="Button" parent="Center/Column" unique_id=1332814842]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Continue"
+
+[node name="SettingsButton" type="Button" parent="Center/Column" unique_id=1365329901]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="Center/Column" unique_id=101701080]
+custom_minimum_size = Vector2(0, 52)
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="Center/Column/NewRunButton" to="." method="_on_new_run_pressed"]
+[connection signal="pressed" from="Center/Column/ContinueButton" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Center/Column/SettingsButton" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Center/Column/QuitButton" to="." method="_on_quit_pressed"]

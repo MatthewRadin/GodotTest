@@ -1,0 +1,148 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://theme/pawn_theme.tres" id="1"]
+[ext_resource type="Script" path="res://scripts/negotiations.gd" id="2"]
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1")
+script = ExtResource("2")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18, 0.13, 0.094, 1.0)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="Column" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="TopBar" type="HBoxContainer" parent="Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="BackButton" type="Button" parent="Margin/Column/TopBar"]
+layout_mode = 2
+custom_minimum_size = Vector2(200, 44)
+text = "< Return to Shop"
+
+[node name="TitleLabel" type="Label" parent="Margin/Column/TopBar"]
+layout_mode = 2
+text = "Negotiations"
+theme_type_variation = &"TitleLabel"
+
+[node name="Row" type="HBoxContainer" parent="Margin/Column"]
+layout_mode = 2
+theme_override_constants/separation = 16
+size_flags_vertical = 3
+
+[node name="LeftCard" type="PanelContainer" parent="Margin/Column/Row"]
+layout_mode = 2
+custom_minimum_size = Vector2(340, 0)
+
+[node name="Box" type="VBoxContainer" parent="Margin/Column/Row/LeftCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OnDesk" type="Label" parent="Margin/Column/Row/LeftCard/Box"]
+layout_mode = 2
+text = "On the desk:"
+theme_type_variation = &"MutedLabel"
+
+[node name="ItemButton" type="Button" parent="Margin/Column/Row/LeftCard/Box"]
+layout_mode = 2
+custom_minimum_size = Vector2(300, 260)
+text = "Item"
+unique_name_in_owner = true
+
+[node name="RightCard" type="PanelContainer" parent="Margin/Column/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Box" type="VBoxContainer" parent="Margin/Column/Row/RightCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="IntroLabel" type="Label" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+text = ""
+theme_override_font_sizes/font_size = 24
+unique_name_in_owner = true
+
+[node name="DialogueLabel" type="Label" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+text = "Placeholder dialogue: \"Hello! Interested in making a deal?\""
+theme_type_variation = &"MutedLabel"
+
+[node name="PriceLabel" type="Label" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+text = ""
+theme_type_variation = &"PriceLabel"
+unique_name_in_owner = true
+
+[node name="OfferSlider" type="HSlider" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+custom_minimum_size = Vector2(420, 28)
+step = 1.0
+value = 0.0
+unique_name_in_owner = true
+
+[node name="OfferLabel" type="Label" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+text = ""
+unique_name_in_owner = true
+
+[node name="ReplyLabel" type="Label" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+text = ""
+theme_override_colors/font_color = Color(0.49, 0.56, 0.36, 1.0)
+unique_name_in_owner = true
+
+[node name="Buttons" type="HBoxContainer" parent="Margin/Column/Row/RightCard/Box"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="MakeOfferButton" type="Button" parent="Margin/Column/Row/RightCard/Box/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 48)
+text = "Make Offer"
+
+[node name="AcceptButton" type="Button" parent="Margin/Column/Row/RightCard/Box/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 48)
+text = "Accept"
+unique_name_in_owner = true
+
+[node name="DeclineButton" type="Button" parent="Margin/Column/Row/RightCard/Box/Buttons"]
+layout_mode = 2
+custom_minimum_size = Vector2(170, 48)
+text = "Decline"
+
+[connection signal="pressed" from="Margin/Column/TopBar/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Margin/Column/Row/LeftCard/Box/ItemButton" to="." method="_on_item_button_pressed"]
+[connection signal="value_changed" from="Margin/Column/Row/RightCard/Box/OfferSlider" to="." method="_on_offer_slider_value_changed"]
+[connection signal="pressed" from="Margin/Column/Row/RightCard/Box/Buttons/MakeOfferButton" to="." method="_on_make_offer_button_pressed"]
+[connection signal="pressed" from="Margin/Column/Row/RightCard/Box/Buttons/AcceptButton" to="." method="_on_accept_button_pressed"]
+[connection signal="pressed" from="Margin/Column/Row/RightCard/Box/Buttons/DeclineButton" to="." method="_on_decline_button_pressed"]
